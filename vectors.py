@@ -68,11 +68,11 @@ class Vector:
         return self.copy().mul(-1)
 
     def __matmul__(self, vector: Vector, /) -> float:
-        """(@) Find the dot product of two vectors as vectors."""
+        """(@) Find the dot product of two vectors."""
         return self.dot(vector)
 
     def __mod__(self, vector: Vector, /) -> float:
-        """(%) Find the cross product of two vectors as vectors."""
+        """(%) Find the cross product of two vectors."""
         return self.cross(vector)
 
     def set(self, vector: Vector, /) -> Vector:
