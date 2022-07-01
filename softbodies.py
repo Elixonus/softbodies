@@ -53,13 +53,13 @@ class Link:
         """Get the momentary length of the link."""
         return Vector.dist(self.nodes[0].position, self.nodes[1].position)
 
-    def get_velocity(self) -> float:
-        """Get the speed of the expansion/contraction of the link (positive/negative)."""
-        return Vector.dot(self.nodes[0].position - self.nodes[1].position, self.nodes[0].velocity - self.nodes[1].velocity) / self.get_length()
-
     def get_displacement(self) -> float:
         """Get the expansion/contraction of the link from its resting configuration (positive/negative)."""
         return self.get_length() - self.length
+
+    def get_velocity(self) -> float:
+        """Get the speed of the expansion/contraction of the link (positive/negative)."""
+        return Vector.dot(self.nodes[0].position - self.nodes[1].position, self.nodes[0].velocity - self.nodes[1].velocity) / self.get_length()
 
     def get_stiffness_force(self) -> float:
         """Get the spring stiffness force expansion/contraction (positive/negative)."""
